@@ -1,0 +1,26 @@
+{
+  "name": "aq-sajt-pravi",
+  "version": "1.0.0",
+  "description": "A professional business consulting website with modern design and responsive layout.",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./css/tailwind.css -o ./styles.css --watch",
+    "dev": "npm run build-css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omgmico/aq-sajt-pravi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/omgmico/aq-sajt-pravi/issues"
+  },
+  "homepage": "https://github.com/omgmico/aq-sajt-pravi#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

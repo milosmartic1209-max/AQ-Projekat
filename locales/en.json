@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "journey": "Journey",
+    "clients": "Clients",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Professional Accounting",
+    "title": "Trusted Partner",
+    "titleAccent": "For Your Business",
+    "description1": "AQ Accounting provides complete accounting services and business consulting for companies in Montenegro.",
+    "description2": "Our team of experienced professionals helps your business grow through professional financial management.",
+    "cta": "Free Consultation"
+  },
+  "guidance": {
+    "badge": "How We Work",
+    "title": "Simple Approach",
+    "titleAccent": "To Professional Services",
+    "steps": [
+      {
+        "title": "Consultation",
+        "description": "We analyze your needs and create a plan"
+      },
+      {
+        "title": "Implementation",
+        "description": "We set up systems and processes"
+      },
+      {
+        "title": "Support",
+        "description": "We provide ongoing support and advice"
+      }
+    ]
+  },
+  "stats": {
+    "title": "Trust Through Numbers",
+    "items": [
+      {
+        "number": "150+",
+        "label": "Satisfied Clients"
+      },
+      {
+        "number": "5+",
+        "label": "Years of Experience"
+      },
+      {
+        "number": "24/7",
+        "label": "Support"
+      },
+      {
+        "number": "100%",
+        "label": "Accuracy"
+      }
+    ]
+  },
+  "solutions": {
+    "badge": "Our Solutions",
+    "title": "Complete Financial",
+    "titleAccent": "Services",
+    "description": "We provide comprehensive solutions for all your financial needs",
+    "items": [
+      "Business bookkeeping",
+      "Financial reporting preparation",
+      "Tax planning and optimization",
+      "Business management consulting"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "title": "Bookkeeping",
+        "description": "Complete business bookkeeping in accordance with Montenegro's legal regulations",
+        "price": "From €150"
+      },
+      {
+        "title": "Tax Advisory",
+        "description": "Expert advice on tax obligations and tax burden optimization",
+        "price": "From €80"
+      },
+      {
+        "title": "Business Consulting",
+        "description": "Strategic planning, business analysis and recommendations for company growth",
+        "price": "From €120"
+      },
+      {
+        "title": "Company Formation",
+        "description": "Complete business registration service and documentation preparation",
+        "price": "From €200"
+      },
+      {
+        "title": "Financial Reports",
+        "description": "Preparation of annual and periodic financial reports",
+        "price": "From €100"
+      },
+      {
+        "title": "Payroll Services",
+        "description": "Salary calculation, contributions and all HR obligations",
+        "price": "From €10/employee"
+      }
+    ]
+  },
+  "journey": {
+    "title": "Your Business Journey",
+    "steps": [
+      {
+        "title": "Analysis",
+        "description": "We thoroughly analyze your current financial status and identify areas for improvement"
+      },
+      {
+        "title": "Strategy",
+        "description": "We create a personalized strategy focused on your specific goals and needs"
+      },
+      {
+        "title": "Implementation",
+        "description": "We implement solutions through a structured approach with clear milestones"
+      },
+      {
+        "title": "Growth",
+        "description": "We monitor progress and adjust strategy to ensure continuous growth"
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "Client Testimonials",
+    "title": "What Our",
+    "titleAccent": "Clients Say",
+    "items": [
+      {
+        "text": "AQ Accounting has transformed the way we manage our company's finances. Their expertise and dedication are incredible.",
+        "author": "Marko Petrović",
+        "position": "CEO, Tech Solutions"
+      },
+      {
+        "text": "Professionalism and reliability are what sets AQ Accounting apart. I recommend them to all businesses in Montenegro.",
+        "author": "Ana Nikolić",
+        "position": "Founder, Creative Agency"
+      },
+      {
+        "text": "Thanks to AQ Accounting, our company has achieved significant savings and improved financial efficiency.",
+        "author": "Stefan Vuković",
+        "position": "Director, Manufacturing Co."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're ready to help you achieve your financial goals",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Please fill in all required fields."
+    },
+    "info": {
+      "phone": "+382 67 123 456",
+      "email": "info@aq-accounting.me",
+      "address": "Kralja Nikole 15, Podgorica, Montenegro",
+      "hours": "Mon-Fri: 09:00-17:00"
+    }
+  },
+  "footer": {
+    "description": "AQ Accounting - Your trusted partner for financial success in Montenegro.",
+    "copyright": "© 2024 AQ Accounting. All rights reserved."
+  }
+}

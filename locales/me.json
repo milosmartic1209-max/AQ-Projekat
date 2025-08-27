@@ -1,0 +1,170 @@
+{
+  "nav": {
+    "home": "Početna",
+    "services": "Usluge",
+    "journey": "Put",
+    "clients": "Klijenti",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Profesionalno Knjigovodstvo",
+    "title": "Pouzdani Partner",
+    "titleAccent": "Za Vaš Biznis",
+    "description1": "AQ Accounting pruža kompletne knjigovodstvene usluge i biznis konsalting za preduzeća u Crnoj Gori.",
+    "description2": "Naš tim iskusnih stručnjaka pomaže vašem biznisu da raste kroz profesionalno finansijsko upravljanje.",
+    "cta": "Besplatna Konsultacija"
+  },
+  "guidance": {
+    "badge": "Kako Funkcionišemo",
+    "title": "Jednostavan Pristup",
+    "titleAccent": "Profesionalnim Uslugama",
+    "steps": [
+      {
+        "title": "Konsultacija",
+        "description": "Analiziramo vaše potrebe i kreiramo plan"
+      },
+      {
+        "title": "Implementacija",
+        "description": "Postavljamo sisteme i procese"
+      },
+      {
+        "title": "Podrška",
+        "description": "Pružamo kontinuiranu podršku i savjete"
+      }
+    ]
+  },
+  "stats": {
+    "title": "Poverenje Kroz Brojke",
+    "items": [
+      {
+        "number": "150+",
+        "label": "Zadovoljnih Klijenata"
+      },
+      {
+        "number": "5+",
+        "label": "Godina Iskustva"
+      },
+      {
+        "number": "24/7",
+        "label": "Podrška"
+      },
+      {
+        "number": "100%",
+        "label": "Tačnost"
+      }
+    ]
+  },
+  "solutions": {
+    "badge": "Naša Rešenja",
+    "title": "Kompletne Finansijske",
+    "titleAccent": "Usluge",
+    "description": "Pružamo sveobuhvatne rešenja za sve vaše finansijske potrebe",
+    "items": [
+      "Vođenje poslovnih knjiga",
+      "Pripremanje finansijskih izvještaja",
+      "Poresko planiranje i optimizacija",
+      "Konsalting za poslovno upravljanje"
+    ]
+  },
+  "services": {
+    "title": "Naše Usluge",
+    "items": [
+      {
+        "title": "Knjigovodstvo",
+        "description": "Kompletno vođenje poslovnih knjiga u skladu sa zakonskim propisima Crne Gore",
+        "price": "Od 150€"
+      },
+      {
+        "title": "Poresko Savetovanje",
+        "description": "Stručno savetovanje o poreskim obavezama i optimizaciji poreskog opterećenja",
+        "price": "Od 80€"
+      },
+      {
+        "title": "Biznis Konsalting",
+        "description": "Strateško planiranje, analiza poslovanja i preporuke za rast kompanije",
+        "price": "Od 120€"
+      },
+      {
+        "title": "Osnivanje Firme",
+        "description": "Kompletna usluga registracije preduzeća i priprema dokumentacije",
+        "price": "Od 200€"
+      },
+      {
+        "title": "Finansijski Izvještaji",
+        "description": "Priprema godišnjih i periodičnih finansijskih izvještaja",
+        "price": "Od 100€"
+      },
+      {
+        "title": "Payroll Usluge",
+        "description": "Obračun plata, doprinosa i svih kadrovskih obaveza",
+        "price": "Od 10€/zaposleni"
+      }
+    ]
+  },
+  "journey": {
+    "title": "Vaš Biznis Put",
+    "steps": [
+      {
+        "title": "Analiza",
+        "description": "Detaljno analiziramo vaš trenutni finansijski status i identifikujemo oblasti za poboljšanje"
+      },
+      {
+        "title": "Strategija",
+        "description": "Kreiramo personalizovanu strategiju koja se fokusira na vaše specifične ciljeve i potrebe"
+      },
+      {
+        "title": "Implementacija",
+        "description": "Implementiramo rešenja kroz strukturiran pristup sa jasnim milestonovima"
+      },
+      {
+        "title": "Rast",
+        "description": "Pratimo napredak i prilagođavamo strategiju kako bi obezbedili kontinuiran rast"
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "Mišljenja Klijenata",
+    "title": "Šta Kažu Naši",
+    "titleAccent": "Klijenti",
+    "items": [
+      {
+        "text": "AQ Accounting je transformisao način na koji upravljamo finansijama naše firme. Njihova ekspertiza i posvećenost su neverovatni.",
+        "author": "Marko Petrović",
+        "position": "CEO, Tech Solutions"
+      },
+      {
+        "text": "Profesionalnost i pouzdanost su ono što izdvaja AQ Accounting. Preporučujem svim preduzećima u Crnoj Gori.",
+        "author": "Ana Nikolić",
+        "position": "Osnivač, Creative Agency"
+      },
+      {
+        "text": "Zahvaljujući AQ Accounting-u, naša firma je ostvarila značajne uštede i poboljšala finansijsku efikasnost.",
+        "author": "Stefan Vuković",
+        "position": "Direktor, Manufacturing Co."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktirajte Nas",
+    "subtitle": "Spremni smo da vam pomognemo da dostignete vaše finansijske ciljeve",
+    "form": {
+      "name": "Ime i Prezime",
+      "email": "Email Adresa",
+      "company": "Naziv Firme",
+      "message": "Poruka",
+      "submit": "Pošaljite Poruku",
+      "success": "Hvala vam! Vaša poruka je uspešno poslata.",
+      "error": "Molimo popunite sva obavezna polja."
+    },
+    "info": {
+      "phone": "+382 67 123 456",
+      "email": "info@aq-accounting.me",
+      "address": "Kralja Nikole 15, Podgorica, Crna Gora",
+      "hours": "Pon-Pet: 09:00-17:00"
+    }
+  },
+  "footer": {
+    "description": "AQ Accounting - Vaš pouzdan partner za finansijski uspeh u Crnoj Gori.",
+    "copyright": "© 2024 AQ Accounting. Sva prava zadržana."
+  }
+}

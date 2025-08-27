@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F74BC">
+    <title>AQ Accounting - Knjigovodstvo i Biznis Konsalting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="m-0 p-0">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out">
+        <!-- Mobile Header -->
+        <div class="md:hidden bg-white/80 backdrop-blur-md border-b border-white/20">
+            <nav class="max-w-7xl mx-auto px-6 py-3">
+                <div class="flex items-center justify-between">
+                    <div class="text-2xl font-bold text-blue-600">
+                        <h2>AQ Accounting.</h2>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="flex items-center text-gray-700 hover:text-blue-600 transition-colors p-2" 
+                            id="mobileNavToggle" 
+                            aria-expanded="false" 
+                            aria-controls="mobileMenu" 
+                            aria-label="Toggle mobile navigation menu">
+                        <span class="text-xl">☰</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Desktop Header -->
+        <div class="hidden md:flex justify-center pt-6">
+            <nav class="bg-white/80 backdrop-blur-md border border-white/20 rounded-full px-8 py-4 shadow-lg">
+                <div class="flex items-center space-x-8">
+                    <div class="text-xl font-bold text-blue-600 mr-4">
+                        <h2>AQ Accounting.</h2>
+                    </div>
+                    
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-4 py-2 rounded-full hover:bg-blue-50 nav-link">Početna</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-4 py-2 rounded-full hover:bg-blue-50 nav-link">Usluge</a>
+                    <a href="#journey" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-4 py-2 rounded-full hover:bg-blue-50 nav-link">Put</a>
+                    <a href="#clients" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-4 py-2 rounded-full hover:bg-blue-50 nav-link">Klijenti</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-4 py-2 rounded-full hover:bg-blue-50 nav-link">Kontakt</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative ml-4">
+                        <button id="languageToggle" class="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 rounded-full hover:bg-blue-50">
+                            <span id="currentLang">ME</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="languageDropdown" class="absolute right-0 mt-2 w-24 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-white/20 hidden z-50">
+                            <button onclick="setLanguage('me')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-t-xl">ME</button>
+                            <button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-b-xl">EN</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-white/90 backdrop-blur-md z-50 transform translate-x-full transition-transform duration-300 md:hidden" 
+         id="mobileMenu" 
+         role="navigation" 
+         aria-label="Mobile navigation">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-between items-center p-6 border-b border-white/20">
+                <h3 class="text-xl font-bold text-blue-600">AQ Accounting</h3>
+                <button class="text-2xl text-gray-600 hover:text-gray-800 transition-colors" 
+                        id="mobileMenuClose" 
+                        aria-label="Close mobile menu">×</button>
+            </div>
+            <nav class="flex-1 px-6 py-8">
+                <div class="space-y-6">
+                    <a href="#home" class="block text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Početna</a>
+                    <a href="#services" class="block text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Usluge</a>
+                    <a href="#journey" class="block text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Put</a>
+                    <a href="#clients" class="block text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Klijenti</a>
+                    <a href="#contact" class="block text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Kontakt</a>
+                    
+                    <!-- Mobile Language Selector -->
+                    <div class="pt-4 border-t border-white/20">
+                        <p class="text-sm text-gray-500 mb-3">Jezik / Language</p>
+                        <div class="flex space-x-4">
+                            <button onclick="setLanguage('me')" id="mobileLangME" class="px-3 py-1 text-sm rounded bg-blue-600 text-white">ME</button>
+                            <button onclick="setLanguage('en')" id="mobileLangEN" class="px-3 py-1 text-sm rounded bg-gray-200 text-gray-700 hover:bg-gray-300">EN</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper for Better Stacking -->
+    <main>
+    <!-- Hero Section 1 - Trusted Accounting Partner -->
+        <!-- Hero Section 1 -->
+    <section class="first min-h-screen flex items-center bg-hero" id="home">
+        <div class="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <span class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium animate-hidden animate-slide-top">
+                        Profesionalno Knjigovodstvo
+                    </span>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight animate-hidden animate-in">
+                        Pouzdani Partner<br>
+                        <span class="text-[#0F74BC]">Za Vaš Biznis</span>
+                    </h1>
+                    <div class="space-y-4 text-lg text-gray-600 animate-hidden animate-in-left">
+                        <p>AQ Accounting pruža kompletne knjigovodstvene usluge i biznis konsalting za preduzeća u Crnoj Gori.</p>
+                        <p>Naš tim iskusnih stručnjaka pomaže vašem biznisu da raste kroz profesionalno finansijsko upravljanje.</p>
+                    </div>
+                    <button class="bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-hidden animate-scale hover-lift btn-glow">
+                        Besplatna Konsultacija
+                    </button>
+                </div>
+                <div class="relative animate-hidden animate-in-right">
+                    <div class="bg-gray-200 h-96 rounded-2xl flex items-center justify-center text-gray-500 font-medium shadow-2xl hover-lift">
+                        Accounting Hero Image
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-blue-200 rounded-full opacity-50"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full opacity-30"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 2 - Business Consulting -->
+    <section class="section-overlap second min-h-screen flex items-center bg-[#232629] text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative order-2 lg:order-1 animate-hidden animate-in-left">
+                    <div class="bg-gray-700 h-96 rounded-2xl flex items-center justify-center text-gray-300 font-medium shadow-2xl hover-lift">
+                        Biznis Konsalting Slika
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#0F74BC] opacity-30 rounded-full"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#0F74BC] opacity-20 rounded-full"></div>
+                </div>
+                <div class="space-y-8 order-1 lg:order-2">
+                    <span class="inline-block px-4 py-2 bg-[#0F74BC] text-white rounded-full text-sm font-medium animate-hidden animate-slide-top">
+                        Biznis Konsalting
+                    </span>
+                    <h1 class="text-4xl lg:text-6xl font-bold leading-tight animate-hidden animate-in">
+                        Strategije Za<br>
+                        <span class="text-[#0F74BC]">Rast Vašeg Biznisa</span>
+                    </h1>
+                    <div class="space-y-4 text-lg text-gray-300 animate-hidden animate-in-right">
+                        <p>Pomažemo preduzećima da optimizuju svoje poslovne procese, smanje troškove i povećaju profitabilnost.</p>
+                        <p>Kroz stručno savetovanje i strategije prilagođene crnogorskom tržištu.</p>
+                    </div>
+                    <button class="bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-hidden animate-scale hover-lift btn-glow">
+                        Zakažite Razgovor
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 3 - Tax Advisory -->
+        <!-- Hero Section 3 - Trusted Partnership -->
+    <section class="section-overlap third min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <span class="inline-block px-4 py-2 bg-[#0F74BC] bg-opacity-10 text-[#0F74BC] rounded-full text-sm font-medium animate-hidden animate-slide-top">
+                        Poresko Savetovanje
+                    </span>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight animate-hidden animate-in">
+                        Poreska Optimizacija<br>
+                        <span class="text-[#0F74BC]">I Savetovanje</span>
+                    </h1>
+                    <div class="space-y-4 text-lg text-gray-600 animate-hidden animate-in-left">
+                        <p>Obezbedimo da vaš biznis bude u potpunosti usklađen sa poreskim propisima Crne Gore.</p>
+                        <p>Naše usluge uključuju pripremu poreskih prijava, poresko planiranje i savetovanje za optimizaciju poreskih obaveza.</p>
+                    </div>
+                    <button class="bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-hidden animate-scale hover-lift btn-glow">
+                        Počnite Danas
+                    </button>
+                </div>
+                <div class="relative animate-hidden animate-in-right">
+                    <div class="bg-gray-200 h-96 rounded-2xl flex items-center justify-center text-gray-500 font-medium shadow-2xl hover-lift">
+                        Poresko Savetovanje Slika
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#0F74BC] bg-opacity-20 rounded-full"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-[#0F74BC] bg-opacity-10 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- Guidance Section -->
+        <!-- Professional Guidance Section -->
+    <section class="section-overlap fourth py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-sm font-semibold text-[#0F74BC] uppercase tracking-wide">
+                        Pouzdanost. Preciznost. Rezultati.
+                    </h3>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        Vaš Poslovni Uspeh Je Naš Prioritet
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Sa više od 10 godina iskustva u księgowskeodstvu i biznis konsaltingu, AQ Accounting je vaš pouzdani partner za finansijski uspeh u Crnoj Gori. Naš stručni tim posvećen je vašem poslovnom rastu.
+                    </p>
+                    <a href="../src/pages/about-us.html" class="inline-flex items-center text-[#0F74BC] hover:text-[#0A5A94] font-semibold transition-colors group">
+                        Saznajte Više
+                        <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="bg-gray-200 h-80 rounded-2xl flex items-center justify-center text-gray-500 font-medium shadow-xl">
+                        Tim AQ Accounting
+                    </div>
+                    <!-- Decorative pattern -->
+                    <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#0F74BC] bg-opacity-10 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+        <!-- Statistics Section -->
+    <section class="section-overlap py-20 bg-[#232629] text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 animate-hidden animate-in">
+                Brojke Koje Govore O Našem Uspehe
+            </h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center animate-hidden animate-scale">
+                    <div class="text-4xl lg:text-6xl font-bold text-[#0F74BC] mb-2 counter" data-target="10">0+</div>
+                    <div class="text-gray-300 font-medium">Godina Iskustva</div>
+                </div>
+                <div class="text-center animate-hidden animate-scale">
+                    <div class="text-4xl lg:text-6xl font-bold text-[#0F74BC] mb-2 counter" data-target="150">0+</div>
+                    <div class="text-gray-300 font-medium">Zadovoljnih Klijenata</div>
+                </div>
+                <div class="text-center animate-hidden animate-scale">
+                    <div class="text-4xl lg:text-6xl font-bold text-[#0F74BC] mb-2 counter" data-target="2000">0+</div>
+                    <div class="text-gray-300 font-medium">Obrađenih Dokumenata</div>
+                </div>
+                <div class="text-center animate-hidden animate-scale">
+                    <div class="text-4xl lg:text-6xl font-bold text-[#0F74BC] mb-2 counter" data-target="95">0%</div>
+                    <div class="text-gray-300 font-medium">Zadovoljstvo Klijenata</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+        <!-- Services Section -->
+    <section class="section-overlap py-20 bg-gray-50" id="services">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-semibold text-[#0F74BC] uppercase tracking-wide mb-3 animate-hidden animate-slide-top">
+                    Naše Usluge
+                </h3>
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 animate-hidden animate-in">
+                    Kompletna Podrška Za Vaš Biznis
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-hidden animate-in">
+                    Profesionalne usluge prilagođene potrebama vašeg preduzeća u Crnoj Gori
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Vođenje Knjiga</h4>
+                    <p class="text-gray-600 mb-4">Kompletno vođenje poslovnih knjiga, izrada finansijskih izveštaja i mesečno izveštavanje</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Dnevne knjige
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Finansijski izveštaji
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Mesečno zatvaranje
+                        </li>
+                    </ul>
+                    <div class="text-lg font-bold text-[#0F74BC]">Od 150€/mesečno</div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Poresko Savetovanje</h4>
+                    <p class="text-gray-600 mb-4">Priprema i podnošenje poreskih prijava, optimizacija poreskih obaveza</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Poreske prijave
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Poresko planiranje
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            PDV administracija
+                        </li>
+                    </ul>
+                    <div class="text-lg font-bold text-[#0F74BC]">Od 80€/prijava</div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Biznis Konsalting</h4>
+                    <p class="text-gray-600 mb-4">Strategije za rast biznisa, optimizacija procesa i finansijski saveti</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Poslovni plan
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Finansijska analiza
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Strategije rasta
+                        </li>
+                    </ul>
+                    <div class="text-lg font-bold text-[#0F74BC]">Od 200€/projekat</div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Osnivanje Firme</h4>
+                    <p class="text-gray-600 mb-4">Kompletna podrška pri osnivanju preduzeća, registracija i početne procedure</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Registracija firme
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Otvaranje računa
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Početne dozvole
+                        </li>
+                    </ul>
+                    <div class="text-lg font-bold text-[#0F74BC]">Od 300€</div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Obračun Plata</h4>
+                    <p class="text-gray-600 mb-4">Mesečni obračun plata, doprinos i sve vezane obaveze prema zaposlenim</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Obračun zarada
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Doprinosi
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Izveštaji za fondove
+                        </li>
+                    </ul>
+                    <div class="text-lg font-bold text-[#0F74BC]">Od 15€/zaposleni</div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Finansijski Audit</h4>
+                    <p class="text-gray-600 mb-4">Detaljni pregled finansijskih knjiga i procedura, preporuke za poboljšanje</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Revizija knjiga
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Analiza procesa
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <span class="w-2 h-2 bg-[#0F74BC] rounded-full mr-3"></span>
+                            Preporuke
+                        </li>
+                    </ul>
+                    <div class="text-lg font-bold text-[#0F74BC]">Od 500€</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Business Journey Section -->
+    <section class="section-overlap py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50" id="journey">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">
+                    Vaš Poslovni Put
+                </h3>
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Od Ideje Do Uspešnog Biznisa
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Pratimo vas kroz svaki korak vašeg poslovnog razvoja
+                </p>
+            </div>
+            
+            <div class="space-y-12 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-8 relative">
+                <!-- Mobile: Vertical Layout, Desktop: Horizontal -->
+                <div class="timeline-step bg-white rounded-2xl p-8 lg:flex-1 transition-all duration-500 shadow-lg" data-step="1">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg">1</div>
+                        <div class="text-5xl mb-4">🚀</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Start</h4>
+                        <p class="text-gray-600 mb-4 font-medium">Ideja i planiranje</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Konsultacije</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Izbor pravne forme</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Poslovni plan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-step bg-white rounded-2xl p-8 lg:flex-1 transition-all duration-500 shadow-lg" data-step="2">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg">2</div>
+                        <div class="text-5xl mb-4">📋</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Registracija</h4>
+                        <p class="text-gray-600 mb-4 font-medium">Osnivanje firme</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Registracija u APR</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Poreska registracija</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Otvaranje računa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-step bg-white rounded-2xl p-8 lg:flex-1 transition-all duration-500 shadow-lg" data-step="3">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg">3</div>
+                        <div class="text-5xl mb-4">📊</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Pokretanje</h4>
+                        <p class="text-gray-600 mb-4 font-medium">Prvi koraci</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Uspostavljanje knjiga</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Prvi zaposleni</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Osnovne dozvole</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-step bg-white rounded-2xl p-8 lg:flex-1 transition-all duration-500 shadow-lg" data-step="4">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg">4</div>
+                        <div class="text-5xl mb-4">📈</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Rast</h4>
+                        <p class="text-gray-600 mb-4 font-medium">Razvoj poslovanja</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Upravljanje finansijama</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Optimizacija procesa</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Proširenje tima</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-step bg-white rounded-2xl p-8 lg:flex-1 transition-all duration-500 shadow-lg" data-step="5">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg">5</div>
+                        <div class="text-5xl mb-4">🏆</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Uspeh</h4>
+                        <p class="text-gray-600 mb-4 font-medium">Stabilno poslovanje</p>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Redovni profiti</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Strategije ekspanzije</li>
+                            <li class="flex items-center justify-center"><span class="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>Dugoročni plan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="bg-gradient-to-r from-gray-200 to-gray-300 h-4 rounded-full mb-6 shadow-inner">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-4 rounded-full transition-all duration-1000 shadow-lg relative overflow-hidden" style="width: 0%" id="journeyProgress">
+                        <div class="absolute inset-0 bg-white bg-opacity-20 rounded-full animate-pulse"></div>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-8 text-lg">Gde se trenutno nalazite u vašem poslovnom putu?</p>
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-gray-900">Spremni Za Sledeći Korak?</h3>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Bez obzira na to gde se nalazite u vašem poslovnom putu, mi smo tu da vam pomognemo</p>
+                    <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl" onclick="scrollToContact()">Kontaktirajte Nas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="section-overlap py-20 bg-gray-900 text-white" id="clients">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wide mb-3 animate-hidden animate-slide-top">
+                    Mišljenja Klijenata
+                </h3>
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4 animate-hidden animate-in ">
+                    Šta Kažu Naši Zadovoljni Klijenti
+                </h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto animate-hidden animate-in ">
+                    Naši klijenti su naš najveći uspeh. Pročitajte kako smo pomogli preduzećima iz Crne Gore da ostvare bolje finansijske rezultate.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 animate-hidden animate-in-left hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                            MR
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-white">Marko Radović</h4>
+                            <p class="text-gray-400 text-sm">CEO, Tech Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "AQ Accounting nam je pomogio da optimizujemo naše financije i smanjimo troškove za 30%. Njihov profesionalan pristup je izvanredan."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 animate-hidden animate-scale hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                            AP
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-white">Ana Petrović</h4>
+                            <p class="text-gray-400 text-sm">Vlasnica, Boutique Fashion</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Zahvaljujući AQ Accounting-u, moja firma je registrovana u rekordnom vremenu. Sve je bilo jasno i transparentno."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 md:col-span-2 lg:col-span-1 animate-hidden animate-in-right hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                            NM
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-white">Nikola Milić</h4>
+                            <p class="text-gray-400 text-sm">Direktor, Import Export</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Poresko savetovanje koje pružaju je na najvišem nivou. Ušteđivanje na porezima je značajno uticalo na naš profit."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-overlap py-20 bg-gray-50" id="contact">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">
+                    Kontakt
+                </h3>
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Spremni Smo Da Pomognemo Vašem Biznisu
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Kontaktirajte nas za besplatnu konsultaciju i saznajte kako možemo unaprediti vaše finansijsko upravljanje.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact form -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <form id="contactForm" class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Pošaljite Upit</h3>
+                        
+                        <div>
+                            <input type="text" id="name" name="name" placeholder="Vaše Ime*" required autocomplete="name" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                        
+                        <div>
+                            <input type="email" id="email" name="email" placeholder="Email Adresa*" required autocomplete="email" inputmode="email"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                        
+                        <div>
+                            <input type="tel" id="phone" name="phone" placeholder="Broj Telefona" autocomplete="tel" inputmode="tel"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+                        
+                        <div>
+                            <textarea id="message" name="message" placeholder="Opišite Vaše Potrebe" rows="4" autocomplete="off"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            Pošaljite Upit
+                        </button>
+                        
+                        <p class="form-note">* Obavezna polja</p>
+                    </form>
+                </div>
+                
+                <!-- Contact details below form -->
+                <div class="contact-info">
+                    <div class="contact-details">
+                    </form>
+                </div>
+                
+                <!-- Contact details -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl">📍</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Adresa</h4>
+                            <p class="text-gray-600">Podgorica, Crna Gora</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl">📞</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Telefon</h4>
+                            <p class="text-gray-600">
+                                <a href="tel:+382XXXXXXXX" aria-label="Pozovi AQ Accounting" class="hover:text-blue-600 transition-colors">
+                                    +382 XX XXX XXX
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl">✉️</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+                            <p class="text-gray-600">
+                                <a href="mailto:info@aqaccounting.me" class="hover:text-blue-600 transition-colors">
+                                    info@aqaccounting.me
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl">🕒</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Radno Vreme</h4>
+                            <p class="text-gray-600">Pon-Pet: 08:00-16:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="section-overlap bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 AQ Accounting. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

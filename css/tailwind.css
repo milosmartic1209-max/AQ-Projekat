@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset any default margins/paddings */
+@layer base {
+  html, body {
+    @apply m-0 p-0;
+  }
+}
+
+/* Section overlapping effect */
+@layer components {
+  .section-overlap {
+    @apply rounded-t-3xl relative z-10 -mt-6;
+  }
+  
+  .section-overlap:first-of-type {
+    @apply mt-0 rounded-t-none;
+  }
+  
+  .section-overlap.second {
+    @apply z-20;
+  }
+  
+  .section-overlap.third {
+    @apply z-30;
+  }
+  
+  .section-overlap.fourth {
+    @apply z-40;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Journey Timeline Active State */
+@layer components {
+  .timeline-step.journey-active {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-300 shadow-2xl transform scale-105;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4), 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-step.journey-active .w-16.h-16 {
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 shadow-xl;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+  
+  .timeline-step.journey-active h4 {
+    @apply text-blue-900;
+  }
+  
+  .timeline-step.journey-active p {
+    @apply text-blue-700 font-semibold;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-slide-top {
+  animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Initial hidden state for animations */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Button hover effects */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glow:hover::before {
+  left: 100%;
+}
+
+/* Card glow on hover */
+.card-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(15, 116, 188, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Navigation link hover effects */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0F74BC;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Business journey timeline custom styles */
+.timeline-step.active {
+  background-color: #0F74BC;
+  color: white;
+}
+
+.timeline-step.active .step-icon {
+  color: white;
+}
+
+/* Body scroll lock for mobile menu */
+body.overflow-hidden {
+  overflow: hidden;
+}
