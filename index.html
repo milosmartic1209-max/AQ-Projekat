@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0F74BC">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23274893'><path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.902 7.098a3.75 3.75 0 0 1 3.903-.884.75.75 0 1 0 .498-1.415A5.25 5.25 0 0 0 8.005 9.75H7.5a.75.75 0 0 0 0 1.5h.054a5.281 5.281 0 0 0 0 1.5H7.5a.75.75 0 0 0 0 1.5h.505a5.25 5.25 0 0 0 6.494 2.701.75.75 0 1 0-.498-1.415 3.75 3.75 0 0 1-4.252-1.286h3.001a.75.75 0 0 0 0-1.5H9.075a3.77 3.77 0 0 1 0-1.5h3.675a.75.75 0 0 0 0-1.5h-3c.105-.14.221-.274.348-.402Z' clip-rule='evenodd' /></svg>" type="image/svg+xml">
     <title>AQ Accounting - Knjigovodstvo i Biznis Konsalting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -158,7 +159,7 @@
                         <p>Kroz stručno savetovanje i strategije prilagođene crnogorskom tržištu.</p>
                     </div>
                     <div class="flex justify-center sm:justify-start">
-                        <button onclick="scrollToContact()" class="bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-hidden animate-scale hover-lift btn-glow">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
                             Kontaktirajte Nas
                         </button>
                     </div>
@@ -281,8 +282,18 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGrid">
                 <!-- Service 1 -->
                 <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="0">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Vođenje Knjiga</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2" style="width: 30px; height: 30px;">
+                            <defs>
+                                <linearGradient id="iconGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="15%" style="stop-color:hsla(222, 58%, 36%, 1)"/>
+                                    <stop offset="72%" style="stop-color:hsla(198, 100%, 50%, 1)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#iconGradient1)" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                        </svg>
+                        Vođenje Knjiga
+                    </h4>
                     <p class="text-gray-600 mb-4">Kompletno vođenje poslovnih knjiga, izrada finansijskih izveštaja i mesečno izveštavanje</p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-600">
@@ -303,8 +314,18 @@
 
                 <!-- Service 2 -->
                 <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="1">
-                    <div class="text-4xl mb-4">💼</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Poresko Savetovanje</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2" style="width: 30px; height: 30px;">
+                            <defs>
+                                <linearGradient id="iconGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="15%" style="stop-color:hsla(222, 58%, 36%, 1)"/>
+                                    <stop offset="72%" style="stop-color:hsla(198, 100%, 50%, 1)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#iconGradient2)" fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.902 7.098a3.75 3.75 0 0 1 3.903-.884.75.75 0 1 0 .498-1.415A5.25 5.25 0 0 0 8.005 9.75H7.5a.75.75 0 0 0 0 1.5h.054a5.281 5.281 0 0 0 0 1.5H7.5a.75.75 0 0 0 0 1.5h.505a5.25 5.25 0 0 0 6.494 2.701.75.75 0 1 0-.498-1.415 3.75 3.75 0 0 1-4.252-1.286h3.001a.75.75 0 0 0 0-1.5H9.075a3.77 3.77 0 0 1 0-1.5h3.675a.75.75 0 0 0 0-1.5h-3c.105-.14.221-.274.348-.402Z" clip-rule="evenodd" />
+                        </svg>
+                        Poresko Savetovanje
+                    </h4>
                     <p class="text-gray-600 mb-4">Priprema i podnošenje poreskih prijava, optimizacija poreskih obaveza</p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-600">
@@ -325,8 +346,18 @@
 
                 <!-- Service 3 -->
                 <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="2">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Biznis Konsalting</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2" style="width: 30px; height: 30px;">
+                            <defs>
+                                <linearGradient id="iconGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="15%" style="stop-color:hsla(222, 58%, 36%, 1)"/>
+                                    <stop offset="72%" style="stop-color:hsla(198, 100%, 50%, 1)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#iconGradient3)" fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 5.94a.75.75 0 1 1-1.4-.537l1.63-4.251-1.086.484a11.2 11.2 0 0 0-5.45 5.173.75.75 0 0 1-1.199.19L9 12.312l-6.22 6.22a.75.75 0 0 1-1.06-1.061l6.75-6.75a.75.75 0 0 1 1.06 0l3.606 3.606a12.695 12.695 0 0 1 5.68-4.974l1.086-.483-4.251-1.632a.75.75 0 0 1-.432-.97Z" clip-rule="evenodd" />
+                        </svg>
+                        Biznis Konsalting
+                    </h4>
                     <p class="text-gray-600 mb-4">Strategije za rast biznisa, optimizacija procesa i finansijski saveti</p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-600">
@@ -347,8 +378,18 @@
 
                 <!-- Service 4 -->
                 <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="3">
-                    <div class="text-4xl mb-4">🏢</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Osnivanje Firme</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2" style="width: 30px; height: 30px;">
+                            <defs>
+                                <linearGradient id="iconGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="15%" style="stop-color:hsla(222, 58%, 36%, 1)"/>
+                                    <stop offset="72%" style="stop-color:hsla(198, 100%, 50%, 1)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#iconGradient4)" fill-rule="evenodd" d="M3 2.25a.75.75 0 0 0 0 1.5v16.5h-.75a.75.75 0 0 0 0 1.5H15v-18a.75.75 0 0 0 0-1.5H3ZM6.75 19.5v-2.25a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75ZM6 6.75A.75.75 0 0 1 6.75 6h.75a.75.75 0 0 1 0 1.5h-.75A.75.75 0 0 1 6 6.75ZM6.75 9a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM6 12.75a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 6a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75Zm-.75 3.75A.75.75 0 0 1 10.5 9h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM10.5 12a.75.75 0 0 0 0 1.5h.75a.75.75 0 0 0 0-1.5h-.75ZM16.5 6.75v15h5.25a.75.75 0 0 0 0-1.5H21v-12a.75.75 0 0 0 0-1.5h-4.5Zm1.5 4.5a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 2.25a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75v-.008a.75.75 0 0 0-.75-.75h-.008ZM18 17.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
+                        </svg>
+                        Osnivanje Firme
+                    </h4>
                     <p class="text-gray-600 mb-4">Kompletna podrška pri osnivanju preduzeća, registracija i početne procedure</p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-600">
@@ -369,8 +410,19 @@
 
                 <!-- Service 5 -->
                 <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="4">
-                    <div class="text-4xl mb-4">💰</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Obračun Plata</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2" style="width: 30px; height: 30px;">
+                            <defs>
+                                <linearGradient id="iconGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="15%" style="stop-color:hsla(222, 58%, 36%, 1)"/>
+                                    <stop offset="72%" style="stop-color:hsla(198, 100%, 50%, 1)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#iconGradient5)" fill-rule="evenodd" d="M7.5 5.25a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0 1 12 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 0 1 7.5 5.455V5.25Zm7.5 0v.09a49.488 49.488 0 0 0-6 0v-.09a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5Zm-3 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                            <path fill="url(#iconGradient5)" d="M3 18.4v-2.796a4.3 4.3 0 0 0 .713.31A26.226 26.226 0 0 0 12 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 0 1-6.477-.427C4.047 21.128 3 19.852 3 18.4Z" />
+                        </svg>
+                        Obračun Plata
+                    </h4>
                     <p class="text-gray-600 mb-4">Mesečni obračun plata, doprinos i sve vezane obaveze prema zaposlenim</p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-600">
@@ -391,8 +443,19 @@
 
                 <!-- Service 6 -->
                 <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="5">
-                    <div class="text-4xl mb-4">📋</div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Finansijski Audit</h4>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2" style="width: 30px; height: 30px;">
+                            <defs>
+                                <linearGradient id="iconGradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="15%" style="stop-color:hsla(222, 58%, 36%, 1)"/>
+                                    <stop offset="72%" style="stop-color:hsla(198, 100%, 50%, 1)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#iconGradient6)" fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 0 1 3.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 0 1 3.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 0 1-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875ZM9.75 17.25a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-.75Zm2.25-3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3a.75.75 0 0 1 .75-.75Zm3.75-1.5a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-5.25Z" clip-rule="evenodd" />
+                            <path fill="url(#iconGradient6)" d="M14.25 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 16.5 7.5h-1.875a.375.375 0 0 1-.375-.375V5.25Z" />
+                        </svg>
+                        Finansijski Audit
+                    </h4>
                     <p class="text-gray-600 mb-4">Detaljni pregled finansijskih knjiga i procedura, preporuke za poboljšanje</p>
                     <ul class="space-y-2 mb-6">
                         <li class="flex items-center text-sm text-gray-600">
@@ -681,7 +744,12 @@
                 <!-- Contact details -->
                 <div class="space-y-8">
                     <div class="flex items-start space-x-4">
-                        <div class="text-2xl">📍</div>
+                        <div class="text-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0F74BC" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                        </div>
                         <div>
                             <h4 class="font-bold text-gray-900 mb-1">Adresa</h4>
                             <p class="text-gray-600">Podgorica, Crna Gora</p>
@@ -689,7 +757,11 @@
                     </div>
                     
                     <div class="flex items-start space-x-4">
-                        <div class="text-2xl">📞</div>
+                        <div class="text-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0F74BC" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                            </svg>
+                        </div>
                         <div>
                             <h4 class="font-bold text-gray-900 mb-1">Telefon</h4>
                             <p class="text-gray-600">
@@ -701,7 +773,11 @@
                     </div>
                     
                     <div class="flex items-start space-x-4">
-                        <div class="text-2xl">✉️</div>
+                        <div class="text-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0F74BC" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
+                        </div>
                         <div>
                             <h4 class="font-bold text-gray-900 mb-1">Email</h4>
                             <p class="text-gray-600">
@@ -713,7 +789,11 @@
                     </div>
                     
                     <div class="flex items-start space-x-4">
-                        <div class="text-2xl">🕒</div>
+                        <div class="text-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0F74BC" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
                         <div>
                             <h4 class="font-bold text-gray-900 mb-1">Radno Vreme</h4>
                             <p class="text-gray-600">Pon-Pet: 08:00-16:00</p>
