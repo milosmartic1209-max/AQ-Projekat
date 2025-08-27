@@ -585,6 +585,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add wheel event listener for scroll locking
         window.addEventListener('wheel', handleJourneyScroll, { passive: false });
         
+        // Store handler globally for bypass access
+        window.handleJourneyScrollGlobal = handleJourneyScroll;
+        
         // Add regular scroll listener for section detection
         window.addEventListener('scroll', updateJourneyOnScroll);
         
@@ -602,46 +605,73 @@ document.addEventListener('DOMContentLoaded', function() {
             const steps = document.querySelectorAll('.timeline-step');
             const progressFill = document.getElementById('journeyProgress');
             let journeyCompleted = false; // Track if user has reached step 5
+            let isUpdating = false; // Prevent rapid updates
+            let updateTimeout = null; // Debounce rapid scroll changes
             
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Remove mobile-active and journey-active class from all steps
-                        steps.forEach(step => {
-                            step.classList.remove('mobile-active', 'journey-active', 'bg-gradient-to-br', 'from-blue-50', 'to-indigo-100', 'border-2', 'border-blue-300', 'scale-105');
-                            step.classList.add('bg-white');
-                        });
-                        
-                        // Add journey-active class to the step in view (same effects as desktop)
-                        entry.target.classList.remove('bg-white');
-                        entry.target.classList.add('mobile-active', 'journey-active');
-                        
-                        // Update progress bar based on which step is active
-                        const stepIndex = Array.from(steps).indexOf(entry.target);
-                        if (stepIndex !== -1 && progressFill) {
-                            const progressPercent = ((stepIndex + 1) / steps.length) * 100;
-                            progressFill.style.width = progressPercent + '%';
+                // Clear any pending updates to prevent flashing
+                if (updateTimeout) {
+                    clearTimeout(updateTimeout);
+                }
+                
+                // Debounce updates to prevent flashing during rapid scroll
+                updateTimeout = setTimeout(() => {
+                    if (isUpdating) return; // Skip if already updating
+                    isUpdating = true;
+                    
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Only update if this step isn't already active
+                            const stepIndex = Array.from(steps).indexOf(entry.target);
+                            const isAlreadyActive = entry.target.classList.contains('mobile-active');
                             
-                            // Mark journey as completed if user reaches step 5
-                            if (stepIndex === steps.length - 1) {
-                                journeyCompleted = true;
+                            if (!isAlreadyActive) {
+                                // Remove mobile-active and journey-active class from all steps
+                                steps.forEach(step => {
+                                    step.classList.remove('mobile-active', 'journey-active', 'bg-gradient-to-br', 'from-blue-50', 'to-indigo-100', 'border-2', 'border-blue-300', 'scale-105');
+                                    step.classList.add('bg-white');
+                                });
+                                
+                                // Add journey-active class to the step in view (same effects as desktop)
+                                entry.target.classList.remove('bg-white');
+                                entry.target.classList.add('mobile-active', 'journey-active');
+                                
+                                // Update progress bar based on which step is active
+                                if (stepIndex !== -1 && progressFill) {
+                                    const progressPercent = ((stepIndex + 1) / steps.length) * 100;
+                                    progressFill.style.width = progressPercent + '%';
+                                    
+                                    // Mark journey as completed if user reaches step 5
+                                    if (stepIndex === steps.length - 1) {
+                                        journeyCompleted = true;
+                                    }
+                                }
+                            }
+                        } else {
+                            // Only remove effects if this step was actually active
+                            if (entry.target.classList.contains('mobile-active')) {
+                                entry.target.classList.remove('mobile-active', 'journey-active', 'bg-gradient-to-br', 'from-blue-50', 'to-indigo-100', 'border-2', 'border-blue-300', 'scale-105');
+                                entry.target.classList.add('bg-white');
+                                
+                                // Only reset progress bar if journey hasn't been completed
+                                if (!journeyCompleted) {
+                                    // Check if any step is still active, if not reset progress bar
+                                    setTimeout(() => {
+                                        const hasActiveStep = Array.from(steps).some(step => step.classList.contains('mobile-active'));
+                                        if (!hasActiveStep && progressFill) {
+                                            progressFill.style.width = '0%';
+                                        }
+                                    }, 100); // Small delay to prevent flickering
+                                }
                             }
                         }
-                    } else {
-                        // Remove active effects when step goes out of view
-                        entry.target.classList.remove('mobile-active', 'journey-active', 'bg-gradient-to-br', 'from-blue-50', 'to-indigo-100', 'border-2', 'border-blue-300', 'scale-105');
-                        entry.target.classList.add('bg-white');
-                        
-                        // Only reset progress bar if journey hasn't been completed
-                        if (!journeyCompleted) {
-                            // Check if any step is still active, if not reset progress bar
-                            const hasActiveStep = Array.from(steps).some(step => step.classList.contains('mobile-active'));
-                            if (!hasActiveStep && progressFill) {
-                                progressFill.style.width = '0%';
-                            }
-                        }
-                    }
-                });
+                    });
+                    
+                    // Release update lock after a short delay
+                    setTimeout(() => {
+                        isUpdating = false;
+                    }, 150);
+                }, 50); // Debounce delay to prevent rapid changes
             }, {
                 threshold: 0.6, // Trigger when 60% of the step is visible
                 rootMargin: '-10% 0px -10% 0px' // Trigger when step is more centered
@@ -655,6 +685,68 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize mobile highlighting
     initMobileJourneyHighlighting();
+    
+    // Services spotlight animation for mobile
+    function initServicesSpotlight() {
+        // Only run on mobile devices
+        if (window.innerWidth <= 768) {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            if (serviceCards.length === 0) return;
+            
+            let isUpdating = false; // Prevent rapid updates
+            let updateTimeout = null; // Debounce rapid scroll changes
+            
+            const observer = new IntersectionObserver((entries) => {
+                // Clear any pending updates to prevent flashing
+                if (updateTimeout) {
+                    clearTimeout(updateTimeout);
+                }
+                
+                // Debounce updates to prevent flashing during rapid scroll
+                updateTimeout = setTimeout(() => {
+                    if (isUpdating) return; // Skip if already updating
+                    isUpdating = true;
+                    
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Only update if this card isn't already active
+                            const isAlreadyActive = entry.target.classList.contains('service-active');
+                            
+                            if (!isAlreadyActive) {
+                                // Remove active class from all cards first
+                                serviceCards.forEach(card => {
+                                    card.classList.remove('service-active');
+                                });
+                                
+                                // Add active class to the card in viewport (same as hover effect)
+                                entry.target.classList.add('service-active');
+                            }
+                        } else {
+                            // Remove active class when card leaves viewport
+                            entry.target.classList.remove('service-active');
+                        }
+                    });
+                    
+                    // Reset updating flag after a short delay
+                    setTimeout(() => {
+                        isUpdating = false;
+                    }, 100);
+                }, 150); // Debounce delay
+            }, {
+                threshold: 0.6, // Card needs to be 60% visible to activate
+                rootMargin: '-50px 0px' // Offset for better timing
+            });
+            
+            // Observe all service cards
+            serviceCards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+    }
+    
+    // Initialize services spotlight
+    initServicesSpotlight();
     
     // Re-initialize on window resize
     let resizeTimeout;
@@ -674,16 +766,47 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (window.innerWidth <= 768) {
                 initMobileJourneyHighlighting();
+                initServicesSpotlight();
+            } else {
+                // Reset service cards on desktop
+                const serviceCards = document.querySelectorAll('.service-card');
+                serviceCards.forEach(card => {
+                    card.classList.remove('service-active');
+                });
             }
         }, 250); // Debounce resize events
     });
 
-    // Scroll to contact function
+    // Scroll to contact function with journey bypass
     window.scrollToContact = function() {
-        document.getElementById('contact').scrollIntoView({
+        const contactSection = document.getElementById('contact');
+        const journeySection = document.querySelector('#journey');
+        
+        if (!contactSection) return;
+        
+        // Temporarily disable journey scroll lock during CTA navigation
+        const originalWheelHandler = window.handleJourneyScrollGlobal;
+        if (originalWheelHandler) {
+            window.removeEventListener('wheel', originalWheelHandler);
+        }
+        
+        // Scroll to contact section
+        contactSection.scrollIntoView({
             behavior: 'smooth'
         });
+        
+        // Re-enable journey scroll lock after scroll completes
+        setTimeout(() => {
+            if (originalWheelHandler) {
+                window.addEventListener('wheel', originalWheelHandler, { passive: false });
+            }
+        }, 1000); // Wait for smooth scroll to complete
     };
+    
+    // Store the journey wheel handler globally for bypass access
+    if (typeof initJourneyAnimation === 'function') {
+        // We'll modify the journey animation to expose the handler
+    }
 
     // Contact form handling
     const contactForm = document.getElementById('contactForm');

@@ -626,6 +626,19 @@ html, body {
   color: rgb(29 78 216 / var(--tw-text-opacity, 1));
 }
 
+/* Service Card Active State for Mobile */
+
+.service-card.service-active {
+  /* Same as hover-lift effect */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card.service-active::before {
+  /* Same as card-glow hover effect */
+  opacity: 1;
+}
+
 .visible {
   visibility: visible;
 }
@@ -731,10 +744,6 @@ html, body {
   margin-bottom: 2rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
 .ml-4 {
   margin-left: 1rem;
 }
@@ -759,6 +768,10 @@ html, body {
   margin-top: 0.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -777,10 +790,6 @@ html, body {
 
 .flex {
   display: flex;
-}
-
-.inline-flex {
-  display: inline-flex;
 }
 
 .grid {
@@ -821,10 +830,6 @@ html, body {
 
 .h-4 {
   height: 1rem;
-}
-
-.h-5 {
-  height: 1.25rem;
 }
 
 .h-80 {
@@ -873,10 +878,6 @@ html, body {
 
 .w-4 {
   width: 1rem;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-full {
@@ -1389,6 +1390,11 @@ html, body {
   line-height: 1.75rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1479,6 +1485,10 @@ html, body {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .opacity-20 {
@@ -1582,6 +1592,50 @@ html, body {
 }
 
 /* Journey Timeline Active State */
+
+/* Disable hover effects on touch devices */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Remove all hover effects on mobile/touch devices */
+
+  *:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+    background-color: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    opacity: inherit !important;
+    scale: inherit !important;
+  }
+
+  /* Specifically target common hover classes */
+
+  .hover\:bg-blue-700:hover,
+  .hover\:from-blue-700:hover,
+  .hover\:to-blue-800:hover,
+  .hover\:scale-105:hover,
+  .hover\:shadow-xl:hover,
+  .hover\:shadow-2xl:hover,
+  .hover\:-translate-y-1:hover,
+  .hover\:opacity-80:hover,
+  .card-glow:hover,
+  .btn-glow:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+    background: inherit !important;
+    opacity: inherit !important;
+    scale: inherit !important;
+  }
+
+  /* Keep only essential interactive states for buttons */
+
+  button:active,
+  .btn:active,
+  a:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
 
 @keyframes fadeInLeft {
   from {
@@ -1805,14 +1859,14 @@ body.overflow-hidden {
   --tw-gradient-to: #1e40af var(--tw-gradient-to-position);
 }
 
-.hover\:text-\[\#0A5A94\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(10 90 148 / var(--tw-text-opacity, 1));
-}
-
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-blue-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-gray-800:hover {
@@ -1847,9 +1901,10 @@ body.overflow-hidden {
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
 }
 
-.group:hover .group-hover\:translate-x-1 {
-  --tw-translate-x: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+@media (min-width: 640px) {
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1909,6 +1964,10 @@ body.overflow-hidden {
 
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start;
   }
 
   .lg\:justify-between {

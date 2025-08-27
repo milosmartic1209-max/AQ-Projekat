@@ -63,6 +63,58 @@
   .timeline-step.journey-active p {
     @apply text-blue-700 font-semibold;
   }
+  
+  /* Service Card Active State for Mobile */
+  .service-card.service-active {
+    /* Same as hover-lift effect */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-card.service-active::before {
+    /* Same as card-glow hover effect */
+    opacity: 1;
+  }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove all hover effects on mobile/touch devices */
+  *:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+    background-color: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    opacity: inherit !important;
+    scale: inherit !important;
+  }
+  
+  /* Specifically target common hover classes */
+  .hover\:bg-blue-700:hover,
+  .hover\:from-blue-700:hover,
+  .hover\:to-blue-800:hover,
+  .hover\:scale-105:hover,
+  .hover\:shadow-xl:hover,
+  .hover\:shadow-2xl:hover,
+  .hover\:-translate-y-1:hover,
+  .hover\:opacity-80:hover,
+  .card-glow:hover,
+  .btn-glow:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+    background: inherit !important;
+    opacity: inherit !important;
+    scale: inherit !important;
+  }
+  
+  /* Keep only essential interactive states for buttons */
+  button:active,
+  .btn:active,
+  a:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
 }
 
 @keyframes fadeInLeft {

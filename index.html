@@ -157,9 +157,11 @@
                         <p>Pomažemo preduzećima da optimizuju svoje poslovne procese, smanje troškove i povećaju profitabilnost.</p>
                         <p>Kroz stručno savetovanje i strategije prilagođene crnogorskom tržištu.</p>
                     </div>
-                    <button class="bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-hidden animate-scale hover-lift btn-glow">
-                        Zakažite Razgovor
-                    </button>
+                    <div class="flex justify-center sm:justify-start">
+                        <button onclick="scrollToContact()" class="bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-hidden animate-scale hover-lift btn-glow">
+                            Kontaktirajte Nas
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,12 +217,11 @@
                     <p class="text-lg text-gray-600 leading-relaxed">
                         Sa više od 10 godina iskustva u księgowskeodstvu i biznis konsaltingu, AQ Accounting je vaš pouzdani partner za finansijski uspeh u Crnoj Gori. Naš stručni tim posvećen je vašem poslovnom rastu.
                     </p>
-                    <a href="../src/pages/about-us.html" class="inline-flex items-center text-[#0F74BC] hover:text-[#0A5A94] font-semibold transition-colors group">
-                        Saznajte Više
-                        <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
+                    <div class="flex justify-center lg:justify-start">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                            Kontaktirajte Nas
+                        </button>
+                    </div>
                 </div>
                 <div class="relative">
                     <div class="bg-gray-200 h-80 rounded-2xl flex items-center justify-center text-gray-500 font-medium shadow-xl">
@@ -277,9 +278,9 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGrid">
                 <!-- Service 1 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="0">
                     <div class="text-4xl mb-4">📊</div>
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Vođenje Knjiga</h4>
                     <p class="text-gray-600 mb-4">Kompletno vođenje poslovnih knjiga, izrada finansijskih izveštaja i mesečno izveštavanje</p>
@@ -301,7 +302,7 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="1">
                     <div class="text-4xl mb-4">💼</div>
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Poresko Savetovanje</h4>
                     <p class="text-gray-600 mb-4">Priprema i podnošenje poreskih prijava, optimizacija poreskih obaveza</p>
@@ -323,7 +324,7 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="2">
                     <div class="text-4xl mb-4">📈</div>
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Biznis Konsalting</h4>
                     <p class="text-gray-600 mb-4">Strategije za rast biznisa, optimizacija procesa i finansijski saveti</p>
@@ -345,7 +346,7 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="3">
                     <div class="text-4xl mb-4">🏢</div>
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Osnivanje Firme</h4>
                     <p class="text-gray-600 mb-4">Kompletna podrška pri osnivanju preduzeća, registracija i početne procedure</p>
@@ -367,7 +368,7 @@
                 </div>
 
                 <!-- Service 5 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="4">
                     <div class="text-4xl mb-4">💰</div>
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Obračun Plata</h4>
                     <p class="text-gray-600 mb-4">Mesečni obračun plata, doprinos i sve vezane obaveze prema zaposlenim</p>
@@ -389,7 +390,7 @@
                 </div>
 
                 <!-- Service 6 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 animate-hidden animate-scale hover-lift card-glow service-card" data-service="5">
                     <div class="text-4xl mb-4">📋</div>
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Finansijski Audit</h4>
                     <p class="text-gray-600 mb-4">Detaljni pregled finansijskih knjiga i procedura, preporuke za poboljšanje</p>
@@ -410,8 +411,20 @@
                     <div class="text-lg font-bold text-[#0F74BC]">Od 500€</div>
                 </div>
             </div>
+            
+            <!-- Services CTA -->
+            <div class="text-center mt-16">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900">Potrebne Vam Profesionalne Usluge?</h3>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Kontaktirajte nas za besplatnu konsultaciju i prilagođenu ponudu za vaše potrebe</p>
+                    <div class="flex justify-center">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                            Zatražite Ponudu
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
     </section>
 
     <!-- Business Journey Section -->
@@ -591,8 +604,20 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Testimonials CTA -->
+            <div class="text-center mt-16">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white">Postanite Naš Sledeći Zadovoljni Klijent</h3>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto">Pridružite se stotinama zadovoljnih preduzeća u Crnoj Gori</p>
+                    <div class="flex justify-center">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                            Započnite Saradnju
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
     </section>
 
     <!-- Contact Section -->
@@ -614,7 +639,10 @@
                 <!-- Contact form -->
                 <div class="bg-white rounded-2xl p-8 shadow-xl">
                     <form id="contactForm" class="space-y-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Pošaljite Upit</h3>
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Pošaljite Upit</h3>
+                            <p class="text-gray-600 text-sm">Popunite formu ispod ili nas direktno pozovite na telefon</p>
+                        </div>
                         
                         <div>
                             <input type="text" id="name" name="name" placeholder="Vaše Ime*" required autocomplete="name" 
@@ -640,13 +668,13 @@
                             Pošaljite Upit
                         </button>
                         
-                        <p class="form-note">* Obavezna polja</p>
-                    </form>
-                </div>
-                
-                <!-- Contact details below form -->
-                <div class="contact-info">
-                    <div class="contact-details">
+                        <div class="text-center pt-4">
+                            <p class="text-gray-500 text-xs">* Obavezna polja</p>
+                            <p class="text-gray-600 text-sm mt-3">
+                                💬 <strong>Preferirate telefon?</strong> Pozovite nas na 
+                                <a href="tel:+382XXXXXXXX" class="text-blue-600 hover:text-blue-700 font-bold underline transition-colors">+382 XX XXX XXX</a>
+                            </p>
+                        </div>
                     </form>
                 </div>
                 
