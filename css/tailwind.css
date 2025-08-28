@@ -6,75 +6,60 @@
 @layer base {
   html, body {
     @apply m-0 p-0;
+    /* Prevent horizontal scrolling and bouncy effects on iOS/macOS */
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  html {
+    /* Prevent zoom on iOS */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  body {
+    /* Prevent horizontal bounce and swipe */
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior: none;
+    touch-action: pan-y pinch-zoom;
+    -ms-touch-action: pan-y pinch-zoom;
+  }
+  
+  /* Prevent horizontal scrolling on all containers */
+  *, *::before, *::after {
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 }
 
-/* Custom animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Animation classes */
+/* Animation classes - REMOVED FOR EXTERNAL LIBRARY */
 @layer components {
   .animate-hidden {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: none;
   }
   
   .animate-in {
-    animation: fadeInUp 0.8s ease-out forwards;
+    /* No animation - external library will handle */
   }
   
   .animate-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+    /* No animation - external library will handle */
   }
   
   .animate-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
+    /* No animation - external library will handle */
   }
   
   .animate-scale {
-    animation: scaleIn 0.6s ease-out forwards;
+    /* No animation - external library will handle */
   }
 }
 
@@ -101,106 +86,6 @@
   }
 }
 
-/* Clean Navigation Components */
-@layer components {
-  .nav-link {
-    @apply text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-4 py-2 rounded-full hover:bg-blue-50;
-  }
-  
-  .mobile-nav-link {
-    @apply block text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium;
-  }
-  
-  .lang-btn {
-    @apply px-3 py-1 text-sm rounded bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors;
-  }
-  
-  .lang-btn.active {
-    @apply bg-blue-600 text-white;
-  }
-}
-
-/* Clean Layout Components */
-@layer components {
-  .container {
-    @apply max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-16;
-  }
-  
-  .hero {
-    @apply min-h-screen flex items-center;
-  }
-  
-  .hero-grid {
-    @apply grid lg:grid-cols-2 gap-12 items-center;
-  }
-  
-  .hero-content {
-    @apply space-y-8;
-  }
-  
-  .hero-title {
-    @apply text-4xl lg:text-6xl font-bold leading-tight;
-  }
-  
-  .hero-description {
-    @apply space-y-4 text-lg;
-  }
-  
-  .hero-badge {
-    @apply inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium animate-hidden animate-in;
-  }
-  
-  .hero-image {
-    @apply relative;
-  }
-  
-  .image-placeholder {
-    @apply bg-gray-200 h-96 rounded-2xl flex items-center justify-center text-gray-500 font-medium shadow-2xl hover-lift;
-  }
-}
-
-/* Button Components */
-@layer components {
-  .btn-primary {
-    @apply bg-[#0F74BC] hover:bg-[#0A5A94] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover-lift btn-glow;
-  }
-  
-  .btn-gradient {
-    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow;
-  }
-}
-
-/* Decoration Components */
-@layer components {
-  .decoration {
-    @apply absolute rounded-full;
-  }
-  
-  .decoration-1 {
-    @apply -top-6 -right-6 w-24 h-24 bg-blue-200 opacity-50;
-  }
-  
-  .decoration-2 {
-    @apply -bottom-6 -left-6 w-32 h-32 bg-blue-100 opacity-30;
-  }
-  
-  .decoration-3 {
-    @apply -top-6 -left-6 w-24 h-24 bg-[#0F74BC] opacity-30;
-  }
-  
-  .decoration-4 {
-    @apply -bottom-6 -right-6 w-32 h-32 bg-[#0F74BC] opacity-20;
-  }
-  
-  .decoration-5 {
-    @apply -top-6 -right-6 w-24 h-24 bg-[#0F74BC] bg-opacity-20;
-  }
-  
-  .decoration-6 {
-    @apply -bottom-6 -left-6 w-32 h-32 bg-[#0F74BC] bg-opacity-10;
-  }
-}
-
 /* Gradient overlays for hero sections */
 @layer components {
   .hero-gradient {
@@ -216,24 +101,14 @@
   }
 }
 
-/* Card effects */
+/* Card effects - NO ANIMATIONS */
 @layer components {
   .card-glow {
     @apply relative overflow-hidden;
   }
   
   .card-glow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-    pointer-events: none;
-    opacity: 0;
+    display: none; /* Removed animation effect */
   }
   
   .btn-glow {
@@ -241,62 +116,50 @@
   }
   
   .btn-glow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-    pointer-events: none;
-    opacity: 0;
+    display: none; /* Removed animation effect */
   }
   
   .hover-lift {
-    @apply transition-all duration-300;
+    /* No transitions - external library will handle */
   }
   
   .hover-scale {
-    @apply transition-transform duration-300;
+    /* No transitions - external library will handle */
   }
 }
 
-/* Desktop hover effects */
+/* Desktop hover effects - DISABLED FOR EXTERNAL LIBRARY */
 @media (hover: hover) and (pointer: fine) {
   .hover-lift:hover {
-    @apply transform -translate-y-2 shadow-2xl;
+    /* No hover effects - external library will handle */
   }
   
   .hover-scale:hover {
-    @apply transform scale-105;
+    /* No hover effects - external library will handle */
   }
   
   .card-glow:hover::before {
-    transform: translateX(100%);
-    opacity: 1;
+    /* No hover effects - external library will handle */
   }
   
   .btn-glow:hover::before {
-    transform: translateX(100%);
-    opacity: 1;
+    /* No hover effects - external library will handle */
   }
   
   .card-glow:hover {
-    @apply transform -translate-y-1 shadow-xl;
+    /* No hover effects - external library will handle */
   }
   
   .btn-glow:hover {
-    @apply transform scale-105 shadow-xl;
+    /* No hover effects - external library will handle */
   }
   
   .service-card:hover {
-    @apply transform -translate-y-2 shadow-2xl;
+    /* No hover effects - external library will handle */
   }
   
   .service-card:hover .service-icon {
-    @apply transform scale-110;
+    /* No hover effects - external library will handle */
   }
 }
 
@@ -316,6 +179,35 @@
     display: none !important;
   }
   
+  /* Disable pointer events for non-essential interactive elements */
+  .hover-lift,
+  .hover-scale,
+  .service-card,
+  .timeline-step,
+  .testimonial-card {
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+  
+  /* Keep pointer events enabled for essential interactive elements */
+  .nav-link,
+  .mobile-menu-toggle,
+  .btn-primary,
+  .btn-secondary,
+  .cta-button,
+  form,
+  input,
+  textarea,
+  button,
+  select {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+  
+  input, textarea, select {
+    cursor: text !important;
+  }
+  
   /* Disable all transitions on touch devices to prevent animation issues */
   *, *::before, *::after {
     transition: none !important;
@@ -323,14 +215,14 @@
   }
 }
 
-/* Service cards */
+/* Service cards - NO ANIMATIONS */
 @layer components {
   .service-card {
-    @apply bg-white rounded-xl p-6 shadow-lg hover-lift transition-all duration-300 border border-gray-100;
+    @apply bg-white rounded-xl p-6 shadow-lg border border-gray-100;
   }
   
   .service-icon {
-    @apply transition-transform duration-300;
+    /* No transitions - external library will handle */
   }
 }
 
@@ -341,18 +233,18 @@
   }
 }
 
-/* Journey Timeline */
+/* Journey Timeline - NO ANIMATIONS */
 @layer components {
   .timeline-step {
-    @apply bg-white rounded-lg p-4 shadow-md cursor-pointer transition-all duration-300 border border-gray-200;
+    @apply bg-white rounded-lg p-4 shadow-md cursor-pointer border border-gray-200;
   }
   
   .timeline-step.active {
-    @apply bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-300 shadow-xl transform scale-105;
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-300 shadow-xl;
   }
   
   .timeline-step.active .step-icon {
-    @apply text-blue-600 transform scale-110;
+    @apply text-blue-600;
   }
   
   .timeline-step.active .step-title {
@@ -364,10 +256,10 @@
   }
 }
 
-/* Mobile menu */
+/* Mobile menu - NO ANIMATIONS */
 @layer components {
   .mobile-menu {
-    @apply fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50;
+    @apply fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50;
   }
   
   .mobile-menu.closed {
@@ -379,25 +271,25 @@
   }
 }
 
-/* Testimonial cards */
+/* Testimonial cards - NO ANIMATIONS */
 @layer components {
   .testimonial-card {
-    @apply bg-white rounded-xl p-6 shadow-lg hover-lift;
+    @apply bg-white rounded-xl p-6 shadow-lg;
   }
 }
 
-/* Contact form */
+/* Contact form - NO ANIMATIONS */
 @layer components {
   .form-input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent;
   }
   
   .form-textarea {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical;
   }
   
   .form-button {
-    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow;
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-semibold shadow-lg;
   }
 }
 
@@ -416,9 +308,9 @@
   }
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling - DISABLED FOR EXTERNAL LIBRARY */
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; - will be handled by external library */
 }
 
 /* Business journey timeline custom styles */
@@ -436,20 +328,9 @@ body.overflow-hidden {
   overflow: hidden;
 }
 
-/* Loading animation for stats */
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Loading animation for stats - REMOVED */
 .counter-animate {
-  animation: countUp 0.6s ease-out;
+  /* No animation - external library will handle */
 }
 
 /* Responsive text sizes */

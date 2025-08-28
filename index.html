@@ -29,7 +29,7 @@
                     </div>
                     
                     <!-- Mobile Menu Button -->
-                    <button class="flex items-center text-gray-700 hover:text-blue-600 transition-colors p-2" 
+                    <button class="flex items-center text-gray-700 p-2" 
                             id="mobileNavToggle" 
                             aria-expanded="false" 
                             aria-controls="mobileMenu" 
@@ -57,15 +57,15 @@
                     
                     <!-- Language Selector -->
                     <div class="relative ml-4">
-                        <button id="languageToggle" class="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 rounded-full hover:bg-blue-50">
+                        <button id="languageToggle" class="flex items-center space-x-1 text-gray-700 font-medium px-4 py-2 rounded-full">
                             <span id="currentLang">ME</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <div id="languageDropdown" class="absolute right-0 mt-2 w-24 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-white/20 hidden z-50">
-                            <button onclick="setLanguage('me')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-t-xl">ME</button>
-                            <button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-b-xl">EN</button>
+                            <button onclick="setLanguage('me')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 rounded-t-xl">ME</button>
+                            <button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 rounded-b-xl">EN</button>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
     <!-- HERO SECTION 1 - Trusted Partner -->
     <!-- ================================ -->
         <!-- Hero Section 1 -->
-    <section class="first min-h-screen flex items-center bg-hero" id="home">
+    <section class="first animate-section min-h-screen flex items-center bg-hero" id="home">
         <div class="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-16">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
@@ -149,7 +149,7 @@
     <!-- ================================ -->
     <!-- HERO SECTION 2 - Business Consulting -->
     <!-- ================================ -->
-    <section class="section-overlap second min-h-screen flex items-center bg-[#232629] text-white">
+    <section class="section-overlap second animate-section min-h-screen flex items-center bg-[#232629] text-white">
         <div class="max-w-7xl mx-auto px-6 py-16">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="relative order-2 lg:order-1 animate-hidden animate-in-left">
@@ -173,7 +173,7 @@
                         <p>Kroz stručno savetovanje i strategije prilagođene crnogorskom tržištu.</p>
                     </div>
                     <div class="flex justify-center sm:justify-start">
-                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg">
                             Kontaktirajte Nas
                         </button>
                     </div>
@@ -185,7 +185,7 @@
     <!-- ================================ -->
     <!-- HERO SECTION 3 - Tax Advisory -->
     <!-- ================================ -->
-    <section class="section-overlap third min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-blue-50">
+    <section class="section-overlap third animate-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-6 py-16">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
@@ -221,7 +221,7 @@
     <!-- ================================ -->
     <!-- GUIDANCE SECTION -->
     <!-- ================================ -->
-    <section class="section-overlap fourth py-20 bg-white">
+    <section class="section-overlap fourth animate-section py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
@@ -235,7 +235,7 @@
                         Sa više od 10 godina iskustva u księgowskeodstvu i biznis konsaltingu, AQ Accounting je vaš pouzdani partner za finansijski uspeh u Crnoj Gori. Naš stručni tim posvećen je vašem poslovnom rastu.
                     </p>
                     <div class="flex justify-center lg:justify-start">
-                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg">
                             Kontaktirajte Nas
                         </button>
                     </div>
@@ -254,7 +254,7 @@
     <!-- ================================ -->
     <!-- STATS SECTION -->
     <!-- ================================ -->
-    <section class="section-overlap py-20 bg-[#232629] text-white">
+    <section class="section-overlap animate-section py-20 bg-[#232629] text-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 animate-hidden animate-in">
                 Brojke Koje Govore O Našem Uspehe
@@ -283,7 +283,7 @@
     <!-- ================================ -->
     <!-- SERVICES GRID SECTION -->
     <!-- ================================ -->
-    <section class="section-overlap py-20 bg-gray-50" id="services">
+    <section class="section-overlap animate-section py-20 bg-gray-50" id="services">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h3 class="text-sm font-semibold text-[#0F74BC] uppercase tracking-wide mb-3 animate-hidden animate-slide-top">
@@ -499,7 +499,7 @@
                     <h3 class="text-2xl font-bold text-gray-900">Potrebne Vam Profesionalne Usluge?</h3>
                     <p class="text-gray-600 text-lg max-w-2xl mx-auto">Kontaktirajte nas za besplatnu konsultaciju i prilagođenu ponudu za vaše potrebe</p>
                     <div class="flex justify-center">
-                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg">
                             Zatražite Ponudu
                         </button>
                     </div>
@@ -511,7 +511,7 @@
     <!-- ================================ -->
     <!-- BUSINESS JOURNEY SECTION -->
     <!-- ================================ -->
-    <section class="section-overlap py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50" id="journey">
+    <section class="section-overlap animate-section py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50" id="journey">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h3 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">
@@ -608,7 +608,7 @@
                 <div class="space-y-6">
                     <h3 class="text-3xl font-bold text-gray-900">Spremni Za Sledeći Korak?</h3>
                     <p class="text-gray-600 text-lg max-w-2xl mx-auto">Bez obzira na to gde se nalazite u vašem poslovnom putu, mi smo tu da vam pomognemo</p>
-                    <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl" onclick="scrollToContact()">Kontaktirajte Nas</button>
+                    <button class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-5 rounded-xl font-semibold text-lg shadow-xl" onclick="scrollToContact()">Kontaktirajte Nas</button>
                 </div>
             </div>
         </div>
@@ -617,7 +617,7 @@
     <!-- ================================ -->
     <!-- TESTIMONIALS SECTION -->
     <!-- ================================ -->
-    <section class="section-overlap py-20 bg-gray-900 text-white" id="clients">
+    <section class="section-overlap animate-section py-20 bg-gray-900 text-white" id="clients">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wide mb-3 animate-hidden animate-slide-top">
@@ -696,7 +696,7 @@
                     <h3 class="text-2xl font-bold text-white">Postanite Naš Sledeći Zadovoljni Klijent</h3>
                     <p class="text-gray-300 text-lg max-w-2xl mx-auto">Pridružite se stotinama zadovoljnih preduzeća u Crnoj Gori</p>
                     <div class="flex justify-center">
-                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-glow">
+                        <button onclick="scrollToContact()" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg">
                             Započnite Saradnju
                         </button>
                     </div>
@@ -708,7 +708,7 @@
     <!-- ================================ -->
     <!-- CONTACT SECTION -->
     <!-- ================================ -->
-    <section class="section-overlap py-20 bg-gray-50" id="contact">
+    <section class="section-overlap animate-section py-20 bg-gray-50" id="contact">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h3 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">
@@ -751,7 +751,7 @@
                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <button type="submit" class="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg">
                             Pošaljite Upit
                         </button>
                         
